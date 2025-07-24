@@ -1,2 +1,2 @@
 # PSFactory
-A PowerShell Module used to create PowerShell Modules.
+A PowerShell Module to create PowerShell Modules.
