@@ -1,3 +1,21 @@
+﻿<#
+.SYNOPSIS
+Creates a new PowerShell module with the specified name and optional Pester test file.
+
+.DESCRIPTION
+This function creates a new PowerShell module directory with a module file. If the `-IncludePester` switch is specified, it also creates a Pester test file for the module.
+
+
+.PARAMETER Name
+The name of the module to create.
+
+.PARAMETER IncludePester
+If specified, a Pester test file will be created alongside the module file.
+
+.EXAMPLE
+New-PSFactoryModule -Name 'MyModule'
+Creates a new PowerShell module named 'MyModule' with a module file.
+#>
 function New-PSFactoryModule {
     [CmdletBinding()]
     param (
@@ -31,7 +49,7 @@ Describe '$moduleName' {
     BeforeAll {
         Import-Module -Name (Join-Path -Path (Get-Location) -ChildPath "$moduleName.psm1")
     }
-        
+
     It 'should be equal to true' {
         $true | Should -Be $true
     }

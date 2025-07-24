@@ -1,4 +1,4 @@
-Describe 'New-PSFactoryModule' {
+﻿Describe 'New-PSFactoryModule' {
     BeforeAll {
         Import-Module -Name (Join-Path -Path (Get-Location) -ChildPath 'src/PSFactory.psm1') -Force
     }
@@ -34,7 +34,7 @@ Describe '$moduleName' {
     BeforeAll {
         Import-Module -Name (Join-Path -Path (Get-Location) -ChildPath "$moduleName.psm1")
     }
-        
+
     It 'should be equal to true' {
         $true | Should -Be $true
     }

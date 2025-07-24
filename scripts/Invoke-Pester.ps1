@@ -1,11 +1,11 @@
-# This script invokes pester tests for the PSFactory module.
+﻿# This script invokes pester tests for the PSFactory module.
 
 # If Pester 5 is not installed, save the module in a PSModules folder
 # and install it from the PowerShell Gallery.
 
 if((-Not (Test-Path .\PSModules\Pester) -and (-Not (Get-Module -Name Pester -ListAvailable | Where-Object { $_.Version -ge [version]'5.0.0' })))) {
     $modulePath = Join-Path -Path (Get-Location) -ChildPath 'PSModules'
-    
+
     # Create the PSModules directory if it does not exist
     if (-not (Test-Path -Path $modulePath)) {
         New-Item -Path $modulePath -ItemType Directory | Out-Null
